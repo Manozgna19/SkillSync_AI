@@ -8,7 +8,6 @@ const links = [
   { to: "/recommendations", label: "Recommendations", icon: "✨" },
   { to: "/skills", label: "Skills", icon: "🧩" },
   { to: "/assessments", label: "Assessments", icon: "📝" },
-  { to: "/chat", label: "AI Assistant", icon: "💬" },
   { to: "/progress", label: "Progress", icon: "📈" },
   { to: "/profile", label: "Profile", icon: "⚙️" },
 ];

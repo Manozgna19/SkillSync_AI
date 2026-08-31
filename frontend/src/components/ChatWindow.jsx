@@ -9,7 +9,7 @@ const SUGGESTIONS = [
   "I'm struggling with this topic.",
 ];
 
-export default function ChatWindow() {
+export default function ChatWindow({ className = "h-[calc(100vh-11rem)]" }) {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
   const [sending, setSending] = useState(false);
@@ -50,7 +50,7 @@ export default function ChatWindow() {
   }
 
   return (
-    <div className="flex flex-col h-[calc(100vh-11rem)] bg-white border border-slate-200 rounded-xl overflow-hidden">
+    <div className={`flex flex-col ${className} bg-white overflow-hidden`}>
       <div className="flex-1 overflow-y-auto p-4 space-y-3">
         {messages.length === 0 && (
           <div className="h-full flex flex-col items-center justify-center text-center gap-3 text-slate-500">
