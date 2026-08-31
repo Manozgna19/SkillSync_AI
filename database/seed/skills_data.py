@@ -1,0 +1,70 @@
+"""
+Canonical seed data for skills and their prerequisite relationships.
+Kept as plain Python data structures so app/seed.py can insert them and
+compute embeddings in one pass.
+"""
+
+# name -> (description, category, difficulty)
+SKILLS = {
+    "Git": ("Version control system for tracking code changes and collaborating.", "Tools", "Beginner"),
+    "Linux Fundamentals": ("Command line, file systems, and processes on Linux.", "Tools", "Beginner"),
+    "HTML & CSS": ("Markup and styling for building web page structure and layout.", "Frontend", "Beginner"),
+    "JavaScript": ("Core programming language of the web for interactivity.", "Frontend", "Beginner"),
+    "TypeScript": ("Typed superset of JavaScript for safer, more maintainable code.", "Frontend", "Intermediate"),
+    "React": ("Component-based JavaScript library for building user interfaces.", "Frontend", "Intermediate"),
+    "Web Accessibility": ("Designing and building web experiences usable by everyone.", "Frontend", "Intermediate"),
+    "Python": ("General-purpose programming language widely used in backend and data work.", "Programming", "Beginner"),
+    "SQL": ("Query language for storing, retrieving, and manipulating relational data.", "Data", "Beginner"),
+    "REST APIs": ("Designing and consuming HTTP APIs following REST principles.", "Backend", "Beginner"),
+    "FastAPI": ("Modern, fast Python web framework for building APIs.", "Backend", "Intermediate"),
+    "Django": ("Batteries-included Python web framework for building full applications.", "Backend", "Intermediate"),
+    "System Design": ("Designing scalable, reliable software systems and architectures.", "Backend", "Advanced"),
+    "Docker": ("Containerizing applications for consistent, portable deployment.", "DevOps", "Intermediate"),
+    "Kubernetes": ("Orchestrating and scaling containerized applications in production.", "DevOps", "Advanced"),
+    "CI/CD": ("Automating build, test, and deployment pipelines.", "DevOps", "Intermediate"),
+    "AWS": ("Core Amazon Web Services cloud infrastructure and services.", "DevOps", "Intermediate"),
+    "Monitoring & Observability": ("Tracking system health, metrics, logs, and traces in production.", "DevOps", "Advanced"),
+    "NumPy": ("Numerical computing library for fast array operations in Python.", "Data Science", "Beginner"),
+    "Pandas": ("Data manipulation and analysis library built on top of NumPy.", "Data Science", "Beginner"),
+    "Statistics": ("Descriptive and inferential statistics for analyzing data.", "Data Science", "Intermediate"),
+    "Probability": ("Probability theory underlying statistical and ML models.", "Data Science", "Intermediate"),
+    "Linear Algebra": ("Vectors, matrices, and transformations underlying ML algorithms.", "Data Science", "Intermediate"),
+    "Data Visualization": ("Communicating insights from data through charts and plots.", "Data Science", "Beginner"),
+    "Machine Learning": ("Building models that learn patterns from data.", "AI/ML", "Intermediate"),
+    "Deep Learning": ("Neural networks for complex pattern recognition tasks.", "AI/ML", "Advanced"),
+    "TensorFlow": ("Google's open-source deep learning framework.", "AI/ML", "Advanced"),
+    "PyTorch": ("Facebook/Meta's open-source deep learning framework.", "AI/ML", "Advanced"),
+    "NLP": ("Natural language processing: teaching machines to understand text.", "AI/ML", "Advanced"),
+    "LLM Engineering": ("Building applications on top of large language models.", "AI/ML", "Advanced"),
+    "MLOps": ("Deploying, monitoring, and maintaining ML models in production.", "AI/ML", "Advanced"),
+}
+
+# skill_name -> [prerequisite skill names]
+PREREQUISITES = {
+    "TypeScript": ["JavaScript"],
+    "React": ["JavaScript"],
+    "Web Accessibility": ["HTML & CSS"],
+    "JavaScript": ["HTML & CSS"],
+    "REST APIs": ["Python"],
+    "FastAPI": ["REST APIs"],
+    "Django": ["REST APIs"],
+    "System Design": ["REST APIs"],
+    "Docker": ["Linux Fundamentals"],
+    "Kubernetes": ["Docker"],
+    "CI/CD": ["Git", "Docker"],
+    "AWS": ["Docker"],
+    "Monitoring & Observability": ["Kubernetes"],
+    "NumPy": ["Python"],
+    "Pandas": ["NumPy"],
+    "Statistics": ["Pandas"],
+    "Probability": ["Statistics"],
+    "Linear Algebra": ["Statistics"],
+    "Data Visualization": ["Pandas"],
+    "Machine Learning": ["Probability", "Linear Algebra", "Pandas"],
+    "Deep Learning": ["Machine Learning"],
+    "TensorFlow": ["Deep Learning"],
+    "PyTorch": ["Deep Learning"],
+    "NLP": ["Deep Learning"],
+    "LLM Engineering": ["NLP", "PyTorch"],
+    "MLOps": ["Machine Learning", "Docker"],
+}
