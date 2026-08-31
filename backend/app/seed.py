@@ -1,9 +1,11 @@
-
 import sys
 import uuid
 import logging
+from pathlib import Path
 
-sys.path.insert(0, r"C:\Users\CVR\Desktop\personalized-learning\database\seed")  # data files live outside the app/ package
+PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
+DATA_DIR = PROJECT_ROOT / "database" / "seed"
+sys.path.insert(0, str(DATA_DIR))
 
 from skills_data import SKILLS, PREREQUISITES  # noqa: E402
 from resources_data import RESOURCES  # noqa: E402
