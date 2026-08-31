@@ -14,7 +14,6 @@ import LearningPath from "./pages/LearningPath";
 import Recommendations from "./pages/Recommendations";
 import Skills from "./pages/Skills";
 import Assessments from "./pages/Assessments";
-import Chat from "./pages/Chat";
 import Progress from "./pages/Progress";
 
 export default function App() {
@@ -40,7 +39,6 @@ export default function App() {
               <Route path="/recommendations" element={<Recommendations />} />
               <Route path="/skills" element={<Skills />} />
               <Route path="/assessments" element={<Assessments />} />
-              <Route path="/chat" element={<Chat />} />
               <Route path="/progress" element={<Progress />} />
             </Route>
 
